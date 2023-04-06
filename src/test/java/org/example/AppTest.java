@@ -76,7 +76,9 @@ public class AppTest
         Validator<Student> studentValidator = new StudentValidator();
         StudentXMLRepository repository = new StudentXMLRepository(studentValidator, "files\\studenti.xml");
 
+
         Student studentDuplicate = new Student("9000", "James Doe", 936);
+        repository.save(studentDuplicate);
         assertEquals(repository.save(studentDuplicate),studentDuplicate);
     }
 
