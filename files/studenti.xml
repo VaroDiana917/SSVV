@@ -20,6 +20,10 @@
         <Nume>nume</Nume>
         <Grupa>937</Grupa>
     </student>
+    <student ID="9000">
+        <Nume>Student</Nume>
+        <Grupa>937</Grupa>
+    </student>
     <student ID="10">
         <Nume>MyName:)</Nume>
         <Grupa>937</Grupa>
