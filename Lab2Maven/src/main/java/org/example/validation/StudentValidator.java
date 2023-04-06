@@ -3,7 +3,6 @@ import org.example.domain.Student;
 
 public class StudentValidator implements Validator<Student> {
     public void validate(Student student) throws ValidationException {
-        //TODO Validate existing ID
         if (student.getID() == null || student.getID().equals("")) {
             throw new ValidationException("ID invalid! \n");
         }
@@ -14,5 +13,6 @@ public class StudentValidator implements Validator<Student> {
             throw new ValidationException("Grupa invalida! \n");
         }
     }
+
 }
 

@@ -58,19 +58,33 @@ public class AppTest
 
         Service service = new Service(fileRepository1, fileRepository2, fileRepository3);
 
-        assertEquals(service.saveStudent("100", "new Test", 937), 1);
-        assertEquals(service.saveStudent("100", "new Test", 940), 0);
+        assertEquals(service.saveStudent("100", "new Test", 940), 1);
 
     }
-    public void testAddStudentRepo() {
+    public void testTC4_GroupNotValid() {
         Validator<Student> studentValidator = new StudentValidator();
         StudentXMLRepository repository = new StudentXMLRepository(studentValidator, "files\\studenti.xml");
 
-        Student student = new Student("100", "test", 937);
-        Student studentWrong = new Student("100", "test", 940);
-        ;
-        assertEquals(repository.save(student),student);
-        assertNull(repository.save(studentWrong));
+        Student studentWrong1 = new Student("9003", "Beyonce", 939);
+        Student studentWrong2 = new Student("9002", "Taylor Swift", 109);
 
+        assertEquals(repository.save(studentWrong1),studentWrong1);
+        assertEquals(repository.save(studentWrong2),studentWrong2);
+    }
+
+    public void testTC2_IDNotUnique(){
+        Validator<Student> studentValidator = new StudentValidator();
+        StudentXMLRepository repository = new StudentXMLRepository(studentValidator, "files\\studenti.xml");
+
+        Student studentDuplicate = new Student("9000", "James Doe", 936);
+        assertEquals(repository.save(studentDuplicate),studentDuplicate);
+    }
+
+    public void testTC3_NameNotValid(){
+        Validator<Student> studentValidator = new StudentValidator();
+        StudentXMLRepository repository = new StudentXMLRepository(studentValidator, "files\\studenti.xml");
+
+        Student studentWrong = new Student("9001", "", 936);
+        assertEquals(repository.save(studentWrong),studentWrong);
     }
 }
