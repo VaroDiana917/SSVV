@@ -10,10 +10,8 @@ import org.example.repository.NotaXMLRepository;
 import org.example.repository.StudentXMLRepository;
 import org.example.repository.TemaXMLRepository;
 import org.example.service.Service;
-import org.example.validation.NotaValidator;
-import org.example.validation.StudentValidator;
-import org.example.validation.TemaValidator;
-import org.example.validation.Validator;
+import org.example.validation.*;
+
 
 /**
  * Unit test for simple App.
@@ -88,5 +86,24 @@ public class AppTest
 
         Student studentWrong = new Student("9001", "", 936);
         assertEquals(repository.save(studentWrong),studentWrong);
+    }
+
+
+    public void testTC1_ValidateTema(){
+        Validator<Tema> temaValidator = new TemaValidator();
+        Tema tema = new Tema("400","Tema",7,6);
+        temaValidator.validate(tema);
+
+    }
+    public void testTC2_ValidateTema(){
+        Validator<Tema> temaValidator = new TemaValidator();
+        Tema tema = new Tema(null,"Tema",7,6);
+        try {
+            temaValidator.validate(tema);
+            fail("Expected ValidationException was not thrown");
+        } catch (ValidationException e) {
+            assertEquals("ID invalid! \n", e.getMessage());
+        }
+
     }
 }
