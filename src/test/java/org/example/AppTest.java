@@ -106,4 +106,38 @@ public class AppTest
         }
 
     }
+
+    public void testTC3_ValidateTema(){
+        Validator<Tema> temaValidator = new TemaValidator();
+        Tema tema = new Tema("401","",7,6);
+        try {
+            temaValidator.validate(tema);
+            fail("Expected ValidationException was not thrown");
+        } catch (ValidationException e) {
+            assertEquals("Descriere invalida! \n", e.getMessage());
+        }
+
+    }
+
+    public void testTC4_ValidateTema(){
+        Validator<Tema> temaValidator = new TemaValidator();
+        Tema tema = new Tema("401","Descriere",6,9);
+        try {
+            temaValidator.validate(tema);
+            fail("Expected ValidationException was not thrown");
+        } catch (ValidationException e) {
+            assertEquals("Deadline invalid! \n", e.getMessage());
+        }
+    }
+
+    public void testTC5_ValidateTema(){
+        Validator<Tema> temaValidator = new TemaValidator();
+        Tema tema = new Tema("401","Descriere",7,0);
+        try {
+            temaValidator.validate(tema);
+            fail("Expected ValidationException was not thrown");
+        } catch (ValidationException e) {
+            assertEquals("Data de primire invalida! \n", e.getMessage());
+        }
+    }
 }
