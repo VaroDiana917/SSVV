@@ -9,7 +9,7 @@ public class TemaXMLRepository extends AbstractXMLRepository<String, Tema> {
 
     public TemaXMLRepository(Validator<Tema> validator, String XMLfilename) {
         super(validator, XMLfilename);
-        loadFromXmlFile();
+        // TODO REPAIR THIS loadFromXmlFile();
     }
 
     protected Element getElementFromEntity(Tema tema, Document XMLdocument) {

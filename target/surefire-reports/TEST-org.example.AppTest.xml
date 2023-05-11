@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ssvv.example.AppTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="10" failures="0" name="org.example.AppTest" time="0.24" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="2022.2.3"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="19+36-2238"/>
     <property name="sun.boot.library.path" value="C:\Users\Varo Diana\.jdks\openjdk-19\bin"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Varo Diana\Desktop\Diana\Facultate\Sem2\SSVV\Lab2_IC\Lab2Maven\Lab2Maven"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\Varo Diana\Desktop\Diana\Facultate\Sem2\SSVV\GitRepo\SSVV"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\Varo Diana\Desktop\Diana\Facultate\Sem2\SSVV\Lab2_IC\Lab2Maven\Lab2Maven"/>
+    <property name="user.dir" value="C:\Users\Varo Diana\Desktop\Diana\Facultate\Sem2\SSVV\GitRepo\SSVV"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="19+36-2238"/>
     <property name="os.arch" value="amd64"/>
@@ -64,5 +64,14 @@
     <property name="sun.stdout.encoding" value="UTF-8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="ssvv.example.AppTest" name="testApp" time="0.005"/>
+  <testcase classname="org.example.AppTest" name="testTC3_ValidateTema" time="0.007"/>
+  <testcase classname="org.example.AppTest" name="testTC2_ValidateTema" time="0"/>
+  <testcase classname="org.example.AppTest" name="testAddStudentService" time="0.102"/>
+  <testcase classname="org.example.AppTest" name="testTC4_GroupNotValid" time="0.001"/>
+  <testcase classname="org.example.AppTest" name="testTC3_NameNotValid" time="0.002"/>
+  <testcase classname="org.example.AppTest" name="testTC4_ValidateTema" time="0"/>
+  <testcase classname="org.example.AppTest" name="testTC1_ValidateTema" time="0"/>
+  <testcase classname="org.example.AppTest" name="testTC2_IDNotUnique" time="0.117"/>
+  <testcase classname="org.example.AppTest" name="testAddGoodStudent" time="0.011"/>
+  <testcase classname="org.example.AppTest" name="testApp" time="0"/>
 </testsuite>

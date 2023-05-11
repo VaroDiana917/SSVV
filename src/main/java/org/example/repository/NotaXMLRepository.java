@@ -39,7 +39,7 @@ public class NotaXMLRepository extends AbstractXMLRepository<Pair<String, String
         int saptamanaPredare = Integer.parseInt(node.getElementsByTagName("SaptamanaPredare").item(0).getTextContent());
         String feedback = node.getElementsByTagName("Feedback").item(0).getTextContent();
 
-        return new Nota(new Pair(IDStudent, IDTema), nota, saptamanaPredare, feedback);
+        return new Nota(new Pair<>(IDStudent, IDTema), nota, saptamanaPredare, feedback);
     }
 
     public void createFile(Nota notaObj) {
